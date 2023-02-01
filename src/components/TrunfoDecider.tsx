@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
+import {ChangeEventHandler} from "react";
 
 export function TrunfoDecider(
     props: {
         hasTrunfo: boolean,
         checked: boolean,
-        onChange: ({target}: { target: any }) => void
+        onChange: ChangeEventHandler
     }
 ) {
 

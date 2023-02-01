@@ -1,7 +1,7 @@
 import './App.css';
 
 import {ICard} from "./ICard";
-import React from "react";
+import React, {ChangeEvent, ChangeEventHandler} from "react";
 import Form from "./components/Form";
 import TrunfoCard from "./components/TrunfoCard";
 
@@ -83,9 +83,10 @@ function App() {
         setCurrentCard(emptyCard);
     };
 
-    const onInputChange =
-        (target: HTMLInputElement) => {
-            const {name} = target;
+    const onInputChange: ChangeEventHandler =
+        (event: ChangeEvent<HTMLInputElement>) => {
+            const {target} = event;
+            const {name} = event.target;
 
             const value = target.type === 'checkbox' ? target.checked : target.value;
 
@@ -107,7 +108,8 @@ function App() {
                 <TrunfoCard
                     showDeleteButton={false}
                     card={currentCard}
-                />
+                    onDeleteButtonClick={() => {
+                    }}/>
             </div>
             <div className="mx-auto my-5 p-5 flex flex-wrap gap-x-5">
                 {cardList.map((carta: ICard) => (

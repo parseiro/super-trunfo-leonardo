@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types';
 import {TrunfoDecider} from './TrunfoDecider.js';
 import {ICard} from "../ICard";
-import React from "react";
+import React, {ChangeEventHandler} from "react";
 
 export default function Form(
     props: {
-        card: ICard, onSaveButtonClick: () => void,
+        card: ICard,
+        onSaveButtonClick: () => void,
         isSaveButtonDisabled: boolean,
-        onInputChange:  (event: HTMLInputElement) => void,
+        onInputChange:  ChangeEventHandler,
         hasTrunfo: boolean,
     }) {
     const {
@@ -138,17 +139,3 @@ export default function Form(
     );
 }
 
-Form.propTypes = {
-    cardName: PropTypes.string.isRequired,
-    cardDescription: PropTypes.string.isRequired,
-    cardAttr1: PropTypes.string.isRequired,
-    cardAttr2: PropTypes.string.isRequired,
-    cardAttr3: PropTypes.string.isRequired,
-    cardImage: PropTypes.string.isRequired,
-    cardRare: PropTypes.string.isRequired,
-    hasTrunfo: PropTypes.bool.isRequired,
-    cardTrunfo: PropTypes.bool.isRequired,
-    isSaveButtonDisabled: PropTypes.bool.isRequired,
-    onInputChange: PropTypes.func.isRequired,
-    onSaveButtonClick: PropTypes.func.isRequired,
-};

@@ -6,7 +6,7 @@ export default function TrunfoCard(
     props: {
         card: ICard,
         showDeleteButton: boolean,
-        onDeleteButtonClick: (card: ICard) => void
+        onDeleteButtonClick: ((card: ICard) => void)
     }
 ) {
     const {card, onDeleteButtonClick, showDeleteButton} = props;
@@ -56,21 +56,3 @@ export default function TrunfoCard(
         </div>
     );
 }
-
-TrunfoCard.propTypes = {
-    cardName: PropTypes.string.isRequired,
-    cardDescription: PropTypes.string.isRequired,
-    cardAttr1: PropTypes.string.isRequired,
-    cardAttr2: PropTypes.string.isRequired,
-    cardAttr3: PropTypes.string.isRequired,
-    cardImage: PropTypes.string.isRequired,
-    cardRare: PropTypes.string.isRequired,
-    cardTrunfo: PropTypes.bool.isRequired,
-    onDeleteButtonClick: PropTypes.func,
-    showDeleteButton: PropTypes.bool,
-};
-
-TrunfoCard.defaultProps = {
-    onDeleteButtonClick: undefined,
-    showDeleteButton: true,
-};
